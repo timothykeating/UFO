@@ -12,6 +12,7 @@ var tbody = d3.select("tbody");
 // With this code, we:
 // Declare a variable, tbody &
 // Use d3.select to tell JavaScript to look for the <tbody> tags in the HTML
+// Data-Driven Documents (D3 for short) is a JavaScript library that adds interactive functionality
 
 function buildTable(data) {
     //  clear the existing data for a clean slate
@@ -69,9 +70,44 @@ function buildTable(data) {
 // Added each value from each object into a cell in the row
     });
 
+    
+    // **************************
+    //     11.5.3
+    // Add Filters
+    // &&&
+    //      11.5.4
+    //  Use the IF Statement
+    // **************************
+    // 
+    // Data-Driven Documents (D3 for short) is a JavaScript library that adds interactive functionality
 
+// pseudocode practice - 'if' statement that we'll use for filtering table by date
+// if (a date is entered) {
+//     Filter the default data to show only the date entered
+// };
 
+function handleClick() {
+    // this function will be invoked in the html code whenever someone clicks on a filter in the table
+    let date = d3.select("#datetime").property("value");
+    let filteredData = tableData;
+    
+    // check to see if a date was entered as a filter & apply the filter to the table data that is manifest
+    // only show rows where 'datetime' matches the filter value 'date'
+    if (date) {
+        filteredData = filteredData.filter(row => row.datetime === date);
+    };
 
+    // rebuild the table using filtered data
+    buildTable(filteredData);
+};
+
+// handleClick is a function that handles a click by the user
+// we also need to listen for the click, which will invoke handleClick()
+// fyi #filter-btn here refers to something in the html that we'll name #filter-btn when we create the html
+d3.selectAll("#filter-btn").on("click", handleClick);
+
+// Build the table when the page loads
+buildTable(tableData);
 
 
 
