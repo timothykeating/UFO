@@ -1,0 +1,41 @@
+/* *************************** */
+/* 11.6.3 */
+/* Customize the Page with CSS */
+/* *************************** */
+
+/* CSS syntax, as with all coding languages, is very exact. 
+Each customization entry follows a pattern. 
+First, the area of customization is set, usually identified by its element, class attribute, or id attribute. 
+A colon follows, then the value of the customization, and a semicolon completes the line of code. */
+
+body {
+
+    color: #f7f7f7;
+  }
+
+  .jumbotron {
+    background-image: url("../images/nasa.jpg");
+    background-size: 100% 100%;
+    text-align: center;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

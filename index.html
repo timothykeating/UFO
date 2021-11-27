@@ -15,14 +15,14 @@
 
     </head>
     <!-- head seperate from body aka decapitation -->
-    <body>
+    <body class='bg-dark'>
         <div class="wrapper">
             <!-- The wrapper class adds a bit of extra functionality to Bootstrap. 
                 It helps group the elements (e.g., title, paragraph, table, and filters) 
                 and specifies the styling in our stylesheet. -->
 
             <!-- BUILD THE NAVIGATION BAR -->
-            <nav class="navbar navbar-expand-lg">
+            <nav class="navbar navbar-dark bg-dark navbar-expand-lg">
             <!-- "navbar" indicates to Bootstrap that we want a component that fits across the top of the page -->
                 <a class="navbar-brand" href="index.html">UFO Sightings</a> 
                 <!-- navbar-brand is more Bootstrap styling code -->
@@ -30,8 +30,8 @@
             </nav>
         </div>
         <!-- seperator, still in body -->
-        <div class="jumbotron text-center">
-            <h1>The Truth Is Out There</h1>
+        <div class="jumbotron text-center ">
+            <h1 class='display-4'>The Truth Is Out There</h1>
         </div>
         <!-- seperator, still in body -->
         <div class="container-fluid">
@@ -60,17 +60,36 @@
                 <div class="col-md-3">
                     <!-- here we are building the filter for the table, which accepts user input -->
                     <!-- we're using a 'form' which is an html-specific thingy -->
-                    <form>
+                    <form class='bg-dark'>
                         <p>Filter Search</p>
-                            <ul class="list-group">
-                                <li class="list-group-item">
+                            <ul class="list-group bg-dark">
+                                <li class="list-group-item bg-dark">
                                     <label for="date">Enter Date</label>
                                     <input type="text" placeholder="1/10/2010" id="datetime" />
                                 </li>
-                                <!-- another list item coming, so these two elemnts will sit above/below each other, not left/right -->
-                                <li class="list-group-item">
-                                    <button id="filter-btn" type="button" class="btn btn-default">Filter Table</button>
+                                <!--  -->
+                                <li class="list-group-item bg-dark">
+                                    <label for="city">Enter a City</label>
+                                    <input type="text" placeholder="" id="city" />
                                 </li>
+                                <!--  -->
+                                <li class="list-group-item bg-dark">
+                                    <label for="state">Enter a State</label>
+                                    <input type="text" placeholder="" id="state" />
+                                </li>
+                                <!--  -->
+                                <li class="list-group-item bg-dark">
+                                    <label for="country">Enter a Country</label>
+                                    <input type="text" placeholder="" id="country" />
+                                </li>
+                                <!--  -->
+                                <li class="list-group-item bg-dark">
+                                    <label for="shape">Enter a Shape</label>
+                                    <input type="text" placeholder="" id="shape" />
+                                </li>
+                                <!--  -->
+                                   
+                                
                             </ul>
                       </form>
                 </div>
@@ -99,5 +118,16 @@
 
             </div>
         </div>
+        <!-- *********************** -->
+        <!-- 11.6.2 ~~~ Add the Data -->
+        <!-- *********************** -->
+        <!-- IMPORTANT
+            When adding multiple <script /> links to a webpage, the order matters. 
+            The order we link our files will be the order they are executed. 
+            If we link app.js before data.js, then the app will try to build the table before the data has loaded. 
+            This will generate an error and break the table. -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.11.0/d3.js"></script> 
+        <script src="static/js/data.js"></script>
+        <script src="static/js/app.js"></script>
     </body>
 </html>
