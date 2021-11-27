@@ -109,7 +109,11 @@ d3.selectAll("#filter-btn").on("click", handleClick);
 // Build the table when the page loads
 buildTable(tableData);
 
-
+    // **************************
+    //     11.6.1
+    // Bootstrap Components
+    // **************************
+// go to index.html file....
 
 
 
